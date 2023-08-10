@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.1.0/fabric.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/customize.css' %}">
+</head>
+<body>
+   <!-- navbar section -->
+   <nav class="navbar">
+    <div class="nav">
+        <img src="{% static 'images/logo.jpg'%}" class="brand-logo" alt="">
+        <div class="nav-items">
+            <div class="search">
+                <input type="text" class="search-box" placeholder="search product">
+                <button class="search-btn">search</button>
+            </div>
+    
+                {% comment %} <a href="#"><i class="fa fa-regular fa-user"></i></a> {% endcomment %}
+                <a href="{% url 'cart' %}"><i class="fa fa-cart-arrow-down"></i></a>
+               
+         
+        </div>
+    </div>
+    <div class="container">
+        <!--sidenav section-->
+       <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#"><button class="dropdown-btn">Men's Clothing</a>
+
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Shirts & T-Shirts</a>
+                <a href="#">Pants & Jeans</a>
+                <a href="#">Suits & Blazars</a>
+                <a href="#">Shorts & Trousers</a>
+                <a href="#">Sportswear</a>
+                <a href="#">Sleep & Lounge Wear</a>
+                <a href="#">Winter Wear</a>
+            </div>
+            <a href="#"><button class="dropdown-btn">Women's Clothing</a>
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Dresses & Jumpsuits</a>
+                <a href="#">Sportswear</a>
+                <a href="#">Ethnic wear</a>
+                <a href="#">Tops, T-Shirts & Shirts</a>
+                <a href="#">Jeans, Trousers, Leggings & Jeggings</a>
+                <a href="#">Skirts & Shorts</a>
+                <a href="#">Shrugs</a>
+                <a href="#">Suits & Blazars</a>
+                <a href="#">Sleep & Lounge Wear</a>
+                <a href="#">Winter Wear</a>
+            </div>
+            <a href="#"><button class="dropdown-btn">Men's Accessories</a>
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Belts</a>
+                <a href="#">Pocket Squares</a>
+                <a href="#">Ties</a>
+                <a href="#">Caps & Hats</a>
+                <a href="#">Handkerchiefs</a>
+                <a href="#">Socks & Hoisery</a>
+                <a href="#">Sunglasses & Spectacle Frames</a>
+                <a href="#">Watches</a>
+                <a href="#">Chains</a>
+                <a href="#">Pendants</a>
+                <a href="#">Cufflinks & Shirt Acccessories</a>
+                <a href="#">Earrings</a>
+                <a href="#">Rings</a>
+                <a href="#">Bracelets</a>
+                <a href="#">Sport Headbands</a>
+            </div>
+            <a href="#"><button class="dropdown-btn">Women's Accessories</a>
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Earrings</a>
+                <a href="#">Necklaces</a>
+                <a href="#">Bracelets</a>
+                <a href="#">Rings</a>
+                <a href="#">Pendants</a>
+                <a href="#">Nose Rings & Pins</a>
+                <a href="#">Hair Accessories</a>
+                <a href="#">Brooches & Pins</a>
+                <a href="#">Jewelry Sets</a>
+                <a href="#">Watches</a>
+                <a href="#">Shawls</a>
+                <a href="#">Belts</a>
+                <a href="#">Sunglasses & Spectacle Frames</a>
+                <a href="#">Caps & Hats</a>
+                <a href="#">Scarves, Stoles & Wraps</a>
+                <a href="#">Socks & Stockings</a>
+                <a href="#">Earmuffs</a>
+                <a href="#">Handkerchiefs</a>
+                <a href="#">Gloves & Arm Warmers</a>
+                <a href="#">Fashion Headbands</a>
+                <a href="#">Sport Headbands</a>
+            </div>
+            <a href="#"><button class="dropdown-btn">Footwear</a>
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#"><button class="dropdown-btn">Women's Footwear</a>
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Ballet Flats</a>
+                    <a href="#">Boots</a>
+                    <a href="#">Casual Shoes</a>
+                    <a href="#">Ethnic Footwear</a>
+                    <a href="#">Sandals</a>
+                    <a href="#">Flip-Flops & Slippers</a>
+                    <a href="#">Formal Shoes</a>
+                    <a href="#">Pumps</a>
+                    <a href="#">Sports & Outdoor Shoes</a>
+                </div>
+                <a href="#"><button class="dropdown-btn">Men's Footwear</a>
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Casual Shoes</a>
+                    <a href="#">Sports & Outdoor Shoes</a>
+                    <a href="#">Formal Shoes</a>
+                    <a href="#">Sandels & Floaters</a>
+                    <a href="#">Flip-Flops & Slippers</a>
+                    <a href="#">Ethnic Footwear</a>
+                </div>
+            </div>
+        </div>
+        <span style="font-size:26px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <!--  sidenav section closed -->
+        <ul class="links-container">
+            <li class="link-item"><a href="{% url 'home' %}" class="link">home</a></li>
+            <li class="link-item"><a href="{% url 'store' %}" class="link">collection</a></li>
+            <li class="link-item"><a href="{% url 'custom' %}" class="link">customization</a></li>
+            <li class="link-item"><a href="{% url 'about' %}" class="link">about us</a></li>
+        </ul>
+    </div>
+</nav>
+<!--navbar section closed-->
+<div class="custom-container mt-60 mb-50 ">
+    <div class="custom-item-container">
+        <div class="button-container mt-40">
+            <button onclick="changeTab(1)" class="tab-button active btn"> <img src={% static 'images/product.png' %}
+                    class="custom-item">
+                Product</button>
+        </div>
+        <div class="button-container mt-40">
+
+            <button onclick="changeTab(2)" class="tab-button btn"><img src={% static 'images/pattern.png' %}
+                    class="custom-item">
+                <div>Pattern</div>
+            </button>
+        </div>
+
+        <div class="button-container mt-40">
+
+            <button onclick="changeTab(4)" class="tab-button btn"><img src={% static 'images/design.png'%}
+                    class="custom-item">
+                <div>Designs</div>
+            </button>
+        </div>
+        
+    </div>
+    <div class="tab-content custom-item-container">
+        <div id="tab1" class="tab active custom-item-info pt-30">
+            <p style="font-size: 24px; padding-top: 10px;">Men's Clothing </p>
+            <ul>
+                <li style="padding-right: 20px; padding-bottom: 10px;">
+                    <a href="">
+
+                        T-shirts
+                    </a>
+
+                </li>
+                <li style="padding-right: 20px; padding-bottom: 10px;">
+                    <a>
+
+                        Shirts
+                    </a href="">
+                </li>
+                <li style="padding-right: 20px; padding-bottom: 10px;">
+                    <a href="">
+
+                        Trousers
+                    </a>
+                </li>
+
+
+            </ul>
+            <br>
+           
+            <p style="font-size: 24px;">Women's Clothing</p>
+            <ul>
+                <li style="padding-right: 20px; padding-bottom: 10px;">
+                    <a href="">
+
+                        T-shirts
+
+                    </a>
+                </li>
+                <li style="padding-right: 20px; padding-bottom: 10px;">
+                    <a href="">
+
+                        Tops
+                    </a>
+                </li>
+                <li style="padding-right: 20px; padding-bottom: 10px;">
+                    <a href="">
+
+                        Dresses
+                    </a>
+                </li>
+
+            </ul>
+            <div class="mt-20">
+
+                <div>
+                    <p style="font-size: 24px;">Choose Colors:</p>
+                </div>
+        
+                <input id="color" type="color">
+               
+            </div>
+
+        </div>
+        <div id="tab2" class="tab custom-item-info">
+            <p style="font-size: 24px;">Available Patterns</p>
+            <br>
+            <div class="pattern-container mrl-40">
+                <img src={% static 'images/p1.jpg' %} class="pattern-image">
+                <img src={% static 'images/p2.jpg' %} class="pattern-image">
+                <img src={% static 'images/p5.jpg' %} class="pattern-image">
+                <img src={% static 'images/p6.jpg' %} class="pattern-image">
+                <img src={% static 'images/p7.jpg' %} class="pattern-image">
+                <img src={% static 'images/p3.jpg' %} class="pattern-image">
+                <img src={% static 'images/p4.jpg' %} class="pattern-image">
+                <img src={% static 'images/p8.jpg' %} class="pattern-image">
+            </div>
+        </div>
+
+        <div id="tab4" class="tab custom-item-info">
+            <p style="font-size: 24px;">Available Designs</p>
+            <br>
+            <div class="pattern-container mrl-40">
+                <img src={% static 'images/d1.png'%} class="pattern-image">
+                <img src={% static 'images/d2.png'%} class="pattern-image">
+                <img src={% static 'images/d5.png'%} class="pattern-image">
+                <img src={% static 'images/d6.png'%} class="pattern-image">
+                <img src={% static 'images/d7.png'%} class="pattern-image">
+                <img src={% static 'images/d3.png'%} class="pattern-image">
+                <img src={% static 'images/d4.png'%} class="pattern-image">
+                <img src={% static 'images/d8.jpg'%} class="pattern-image">
+                <img src={% static 'images/d10.png'%} class="pattern-image">
+                <img src={% static 'images/d13.png'%} class="pattern-image">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="model-container">
+       
+        <div id="tshirt-div">
+            <canvas id="c" width="500" height="500"></canvas>
+        </div>
+    </div>
+
+</div>
+ <!-- newsletter section -->
+ <div class="newsletter">
+    <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+            Get E-mail updates about our latest shop and <span>special offers</span>
+        </p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your e-mail address">
+        <button><a href="#">Sign Up</a></button>
+    </div>
+</div>
+<!-- newsletter section closed -->
+<!-- footer section -->
+<footer class="section-p1">
+<div class="col">
+    <img src="{% static 'images/logo1.jpg' %}" alt="" class="logo">
+    <h4>Contact</h4>
+    <p><strong>Address:</strong>734 Wellington Road,Street 25, San Francisco </p>
+    <p><strong>Phone:</strong>(+91) 9413593643/(+01) 4243741 </p>
+    <p><strong>Hours:</strong>11:00 - 20:00, Mon - Fri </p>
+    <div class="follow">
+        <h4>Follow Us</h4>
+        <div class="icon">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-pinterest-p"></i>
+            <i class="fa fa-youtube-play"></i>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <br>
+    <h4>About</h4>
+    <a href="#">About Us</a>
+    <a href="#">Delivery Information</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Contact Us</a>
+</div>
+<div class="col">
+    <br>
+    <h4>My Account</h4>
+    <a href="#">Sign In</a>
+    <a href="#">View Cart</a>
+    <a href="#">My Wishlist</a>
+    <a href="#">Track My Orders</a>
+    <a href="#">Help</a>
+</div>
+<div class="col install">
+    <br>
+    <h4>Install App</h4>
+    <p>From App store or Google Play</p>
+    <div class="rows">
+        <img src="{% static 'images/ios.jpg' %}" alt="">
+        <img src="{% static 'images/play.jpg' %}" alt="">
+    </div>
+    <p>Secured Payment Gateways</p>
+    <img src="{% static 'images/pay.png' %}" alt="">
+</div>
+<div class="copyright">
+    <p>
+        <span class="fa fa-copyright"></span>2023 All rights reserved by StyleWave
+    </p>
+</div>
+</footer>
+<!-- footer section closed -->
+<script >
+    // sidenav section
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "275px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+
+// Function for tab changing
+function changeTab(tabNumber) {
+    // Hide all tabs
+    const tabs = document.getElementsByClassName('tab');
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove('active');
+    }
+  
+    // Show the selected tab
+    const selectedTab = document.getElementById('tab' + tabNumber);
+    selectedTab.classList.add('active');
+  }
+  var canvas = new fabric.Canvas('c', {
+    backgroundColor: '#999'
+  });
+  
+  fabric.util.loadImage("{% static 'images/background_tshirt.png'%}", (image) => {
+    image = new fabric.Image(image);
+    image.set({
+        width: canvas.width,
+        height: canvas.height,
+        top: canvas.height / 2,
+        left: canvas.width / 2
+    });
+    canvas.add(image);
+    canvas.renderAll();
+  }, null, { crossOrigin: 'Anonymous' })
+  
+  // console.log(this)
+  $('#color').on('change', () => {
+    canvas.setBackgroundColor($('input#color').val())
+    canvas.renderAll();
+  })
+  
+    </script>
+    
+   
+</body>
+</html>
